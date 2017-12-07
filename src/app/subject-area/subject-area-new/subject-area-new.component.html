@@ -1,7 +1,7 @@
 <div class="ui raised segment">
   <h2 class="ui header">Subject Area</h2> 
   <form [formGroup]="subjectForm"
-          (ngSubmit)="onSubmit(subjectForm.value)"
+          (ngSubmit)="create(subjectForm.value)"
           class="ui large form segment">
   <div class="field required">
     <label for="subject">Subject</label>

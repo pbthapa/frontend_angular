@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subject } from '../subject.model';
 
@@ -11,6 +11,8 @@ export class SubjectAreaNewComponent implements OnInit {
 
   private subjectForm: FormGroup;
   private subject: Subject;
+  
+  @Output() createNewSubject = new EventEmitter();
 
   constructor(formBuilder: FormBuilder) { 
     this.subjectForm = formBuilder.group({
@@ -22,9 +24,11 @@ export class SubjectAreaNewComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit(value): void {
-    this.subject = new Subject(null, value.subject, value.active);
+  create(value): void {
+    this.subject = new Subject(1, value.subject, value.active==null?'false': value.active);
     console.log(`${this.subject.subject} is entered with ${this.subject.active} status`);
+    this.createNewSubject.emit(this.subject);
+    this.subjectForm.reset();
   }
 
 }
