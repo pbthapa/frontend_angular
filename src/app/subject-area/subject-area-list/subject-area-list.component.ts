@@ -2,7 +2,7 @@ import { Component, OnInit, Input, EventEmitter } from '@angular/core';
 import { Subject } from '../subject.model';
 
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
-import { TableColumnConf } from '../../app-utils/xDataTable/table/column.conf.datatable';
+import { TableColumnConf } from '../../app-utils/xDatatable/table/column.conf.datatable';
 import { ColumnConfig } from './table-column.config';
 import { TableOptions } from './../../app-utils/xDatatable/table/table.options';
 

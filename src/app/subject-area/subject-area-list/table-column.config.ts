@@ -1,4 +1,4 @@
-import { TableColumnConf } from '../../app-utils/xDataTable/table/column.conf.datatable';
+import { TableColumnConf } from '../../app-utils/xDatatable/table/column.conf.datatable';
 
 export const ColumnConfig: Array<TableColumnConf> = [
     { key: '$index', mapto: '$index', name: 'SN.', sort: { enabled: true } },

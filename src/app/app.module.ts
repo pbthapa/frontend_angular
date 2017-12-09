@@ -10,9 +10,9 @@ import { SubjectAreaListComponent } from './subject-area/subject-area-list/subje
 import { SubjectAreaNewComponent } from './subject-area/subject-area-new/subject-area-new.component';
 import { SubjectAreaEditComponent } from './subject-area/subject-area-edit/subject-area-edit.component';
 import { MultiChoiceComponent } from './multi-choice/multi-choice.component';
-import { TableComponent } from './app-utils/xDataTable/table/table.component';
-import { DataLoaderService } from './app-utils/xDataTable/service/dataLoader.service';
-import { HtmlBind } from './app-utils/xDataTable/table/html-bind.directive';
+import { TableComponent } from './app-utils/xDatatable/table/table.component';
+import { DataLoaderService } from './app-utils/xDatatable/service/dataLoader.service';
+import { HtmlBind } from './app-utils/xDatatable/table/html-bind.directive';
 import { TooltipModule } from 'ngx-tooltip';
 
 
