@@ -27,7 +27,7 @@
       </div>
       <!-- /.box-header -->
       <div class="box-body table-responsive no-padding">
-          <table class="table table-striped">
+          <table class="ui celled table">
               <tbody *ngIf="ready">
                   <tr>
                       <th class="x-table-head" (click)="sort(col)" [ngClass]="{'pointer':col.sort.enabled}" *ngFor="let col of options.columns">{{col.name}}
@@ -73,19 +73,16 @@
                       </li>
                   </ul>
               </div>
-              <div class="col-md-6 col-sm-6 col-xs-8 box-tools text-left">
-                  <ul class="pagination pagination-sm no-margin text-center">
-                      <li>
-                          <a style="cursor:pointer;" [ngClass]="{'a-disabled':isFirstPage()}" (click)="selectPage(currentPage-1,-1)">«</a>
-                      </li>
-                      <li>
-                          <a style="opacity:0.4;cursor:pointer;" (click)="selectPage(page+1)" [ngClass]="{'page-selected disable-event':isCurrentPage(page+1,0)}"
-                              *ngFor="let page of getPages();let i=index;">{{page+1}}</a>
-                      </li>
-                      <li>
-                          <a style="cursor:pointer;" [ngClass]="{'a-disabled':isLastPage()}" (click)="selectPage(currentPage+1,1)">»</a>
-                      </li>
-                  </ul>
+
+              <div class="ui right floated pagination menu">
+                <a class="icon item" [ngClass]="{'a-disabled':isFirstPage()}" (click)="selectPage(currentPage-1,-1)">
+                  <i class="left chevron icon"></i>
+                </a>
+                <a class="item" (click)="selectPage(page+1)" [ngClass]="{'page-selected disable-event':isCurrentPage(page+1,0)}"
+                *ngFor="let page of getPages();let i=index;">{{page+1}}</a>
+                <a class="icon item" [ngClass]="{'a-disabled':isLastPage()}" (click)="selectPage(currentPage+1,1)">
+                  <i class="right chevron icon"></i>
+                </a>
               </div>
           </div>
       </div>

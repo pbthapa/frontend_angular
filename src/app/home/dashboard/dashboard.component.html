@@ -1,0 +1,14 @@
+<div class="row main view-thumbnail-container">
+        <div *ngFor="let menu of menus">
+            <div class="view-thumbnail">
+                <span class="close" *ngIf="selected" (click)="onClose()"><i class="fa fa-times-circle-o"></i></span>
+                <div class="info-box" (click)="onSelect(menu.for)">
+                    <span class="info-box-icon bg-green"><i class="{{menu.iconClass}}"></i></span>
+    
+                    <div class="info-box-content" style="padding-top:20px;">
+                        <a class="info-box-text" href="subject">{{menu.title_a}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
