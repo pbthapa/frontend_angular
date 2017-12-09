@@ -1,0 +1,93 @@
+<div class="x-table row">
+  <div class="col-md-12">
+      <div class="topbar">
+          <div *ngIf="options.search">
+              <div class="dropdown">
+                  <div class="row">
+                      <div class="col-md-2 col-sm-3 col-xs-5">
+                          <button style="width:100%;border-radius: 4px;" class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                              aria-haspopup="true" aria-expanded="true">{{searchBy!=null?searchBy.name:'search'}}
+                              <span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" style="width:auto;cursor:pointer;">
+                              <li (click)="searchByParam(option)" *ngFor="let option of getSearchableColumns()">
+                                  <a>{{option.name}}</a>
+                              </li>
+                          </ul>
+                      </div>
+                      <div class="col-md-2 col-sm-3 col-xs-3" style="padding-left:0px;cursor:pointer;">
+                          <input class="form-control" type="text" placeholder="search" [(ngModel)]="searchQuery" (keyup)="keyUp.next($event)">
+                      </div>
+                      <div class="col-md-8 col-sm-6 col-xs-4 text-left">
+                          <i *ngIf="options.download.xls" (click)="downloadXls()" class="fa fa-download" style="padding-top:8px;cursor:pointer;" aria-hidden="true"></i>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- /.box-header -->
+      <div class="box-body table-responsive no-padding">
+          <table class="table table-striped">
+              <tbody *ngIf="ready">
+                  <tr>
+                      <th class="x-table-head" (click)="sort(col)" [ngClass]="{'pointer':col.sort.enabled}" *ngFor="let col of options.columns">{{col.name}}
+                          <i *ngIf="col.sort.enabled" class="sort-column-icon fa" [ngClass]="{'fa-sort-asc':col.sort.status == 'asc','fa-sort-desc':col.sort.status == 'desc'}"></i>
+                      </th>
+                  </tr>
+                  <tr class="x-table-tr" *ngFor="let row of pageRows; let i=index;">
+                      <td class="x-table-td" htmlbind [col]="col" [row]="row" (click)="onRowClick(row);" (fire)="onEventFire($event);" #ref *ngFor="let col of options.columns">{{resolveColumnValue(row,col,i,ref)}} </td>
+                  </tr>
+              </tbody>
+              <div *ngIf="!ready">
+                  <div class="sk-circle">
+                      <div class="sk-circle1 sk-child"></div>
+                      <div class="sk-circle2 sk-child"></div>
+                      <div class="sk-circle3 sk-child"></div>
+                      <div class="sk-circle4 sk-child"></div>
+                      <div class="sk-circle5 sk-child"></div>
+                      <div class="sk-circle6 sk-child"></div>
+                      <div class="sk-circle7 sk-child"></div>
+                      <div class="sk-circle8 sk-child"></div>
+                      <div class="sk-circle9 sk-child"></div>
+                      <div class="sk-circle10 sk-child"></div>
+                      <div class="sk-circle11 sk-child"></div>
+                      <div class="sk-circle12 sk-child"></div>
+                  </div>
+              </div>
+
+          </table>
+      </div>
+      <!-- /.box-body -->
+      <div *ngIf="options.pagination" class="box-footer text-center">
+          <div class="row">
+              <div class="col-md-5 col-sm-5 col-xs-2">
+              </div>
+              <div class="col-md-1 col-sm-1 col-xs-2 dropdown text-right">
+                  <button style="width:auto;border:none;" class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="true">{{options.pageSize}}
+                      <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" style="width:auto;">
+                      <li (click)="setPageSize(option)" *ngFor="let option of options.pageSizeOptions">
+                          <a>{{option}}</a>
+                      </li>
+                  </ul>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-8 box-tools text-left">
+                  <ul class="pagination pagination-sm no-margin text-center">
+                      <li>
+                          <a style="cursor:pointer;" [ngClass]="{'a-disabled':isFirstPage()}" (click)="selectPage(currentPage-1,-1)">«</a>
+                      </li>
+                      <li>
+                          <a style="opacity:0.4;cursor:pointer;" (click)="selectPage(page+1)" [ngClass]="{'page-selected disable-event':isCurrentPage(page+1,0)}"
+                              *ngFor="let page of getPages();let i=index;">{{page+1}}</a>
+                      </li>
+                      <li>
+                          <a style="cursor:pointer;" [ngClass]="{'a-disabled':isLastPage()}" (click)="selectPage(currentPage+1,1)">»</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
