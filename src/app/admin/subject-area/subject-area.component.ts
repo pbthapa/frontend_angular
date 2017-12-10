@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { SubjectAreaService } from './subject-area.service';
-import { Subject } from './subject.model';
+import { SubjectAreaService } from './service/subject-area.service';
+import { Subject } from './model/subject.model';
 
 @Component({
   selector: 'app-subject-area',
-  templateUrl: './subject-area.component.html',
-  styleUrls: ['./subject-area.component.css']
+  templateUrl: './subject-area.component.html'
 })
 export class SubjectAreaComponent implements OnInit {
 

@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Subject } from '../subject.model';
+import { Subject } from '../model/subject.model';
 
 @Component({
   selector: 'app-subject-area-new',

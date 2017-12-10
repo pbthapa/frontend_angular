@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
+declare var $: any;
+
 @Component({
   selector: 'app-multi-choice',
-  templateUrl: './multi-choice.component.html',
-  styleUrls: ['./multi-choice.component.css']
+  templateUrl: './multi-choice.component.html'
 })
 export class MultiChoiceComponent implements OnInit {
 
@@ -12,4 +13,7 @@ export class MultiChoiceComponent implements OnInit {
   ngOnInit() {
   }
 
+  showModal(): void {
+    $(".ui.modal").modal("show");
+  }
 }

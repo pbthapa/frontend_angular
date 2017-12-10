@@ -8,8 +8,7 @@ const routes: Routes = [
         path: '', component: HomeComponent,
         children: [
             { path: '', component: DashboardComponent, pathMatch: 'full' },
-            { path: 'subject', loadChildren: '../subject-area/subject-area.module#SubjectAreaModule' },
-            { path: 'multi-choice', loadChildren: '../multi-choice/multi-choice.module#MultiChoiceModule' }
+            { path: 'admin', loadChildren: '../admin/admin.module#AdminModule' }
         ]
     }
 ]
