@@ -1,7 +1,7 @@
 import { TableColumnConf } from '../../app-utils/xDatatable/table/column.conf.datatable';
 
 export const ColumnConfig: Array<TableColumnConf> = [
-    { key: '$index', mapto: '$index', name: 'SN.', sort: { enabled: true } },
+    { key: '$index', mapto: '$index', name: 'SN.', sort: { enabled: false } },
     {
         key: 'subject',
         name: 'Subject Area',
@@ -12,14 +12,14 @@ export const ColumnConfig: Array<TableColumnConf> = [
         key: 'active',
         name: 'Active',
         sort: { enabled: true },
-        search: true
+        search: false
     },    
     {
         key: 'html',
         sort: { enabled: false },
         name: 'Action',
         type: 'html',
-        value: '<button class="btn btn-default" value="delete"><i value="delete" class="fa fa-trash"></i></button><button class="btn btn-default" value="view"><i value="view" class="fa fa-eye"></i></button><button class="btn btn-default" value="edit"><i value="edit" class="fa fa-edit"></i></button>',
+        value: '<button class="ui basic icon button" value="delete"><i value="delete" class="trash outline icon"></i></button><button class="ui basic icon button" value="view"><i value="view" class="street view icon"></i></button><button class="ui basic icon button" value="edit"><i value="edit" class="edit icon"></i></button>',
         events: { click: true }
     }
 

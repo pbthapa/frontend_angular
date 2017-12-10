@@ -11,7 +11,8 @@ export class DashboardComponent implements OnInit {
   selected = null;
   
   menus = [
-      { route: '', title_a: 'Subject', title_b: 'Area', description: 'Subject Area' }
+      { route: 'subject', title_a: 'Subject', title_b: 'Area', description: 'Subject Area' },
+      { route: 'multi-choice', title_a: 'Question', title_b: 'Question', description: 'Question Preparation' }
   ];
   constructor(private route: ActivatedRoute, private router: Router) { }
 

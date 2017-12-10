@@ -8,7 +8,7 @@ import { SubjectAreaListComponent } from './subject-area-list/subject-area-list.
         RouterModule.forChild([
             {
                 path: '', component: SubjectAreaComponent, children: [
-                        { path: 'subject', component: SubjectAreaListComponent }
+                        { path: 'subject', component: SubjectAreaComponent }
                 ]
             }
         ])

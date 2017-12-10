@@ -67,12 +67,16 @@ export class SubjectAreaListComponent implements OnInit {
   // Event for table Click
   onCompleteApplicationClick(event) {
     if (event.event === 'view') {
+      console.log(event.event + " is clicked. i.e. view");
     }
     if (event.event === 'edit') {
+      console.log(event.event + " is clicked. i.e. edit");
     }
     if (event.event === 'delete') {
+      console.log(event.event + " is clicked. i.e. delete");
     }
     if (event.event === 'deactivate') {
+      console.log(event.event + " is clicked. i.e. deactivate");
     }
   }
 
