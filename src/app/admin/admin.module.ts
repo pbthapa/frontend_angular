@@ -16,6 +16,7 @@ import { SubjectAreaService } from './subject-area/service/subject-area.service'
 import { MultiChoiceComponent } from './multi-choice/multi-choice.component';
 import { HomeModule } from '../home/home.module';
 import { AdminComponent } from './admin.component';
+import { DynamicFormModule } from '../app-utils/xForm/dynamic-form.module';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { AdminComponent } from './admin.component';
     FormsModule,
     TooltipModule, 
     AdminRoutingModule,
-    HomeModule
+    HomeModule,
+    DynamicFormModule
   ],
   providers: [
     SubjectAreaService,
