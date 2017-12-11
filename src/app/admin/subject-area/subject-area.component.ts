@@ -57,7 +57,7 @@ export class SubjectAreaComponent implements OnInit {
 
   addSubject(obj: Subject) {
     //temporary solution until saved in database
-    obj.id = 1;
+    obj.id = Math.floor(Math.random() * 99) + 1  
     if (obj.active === null) {
       obj.active = false;
     }
@@ -90,16 +90,33 @@ export class SubjectAreaComponent implements OnInit {
   // Event for table Click
   onCompleteApplicationClick(event) {
     if (event.event === 'view') {
-      console.log(event.event + " is clicked. i.e. view");
+      this.tableOnViewSubject(event.row);
     }
     if (event.event === 'edit') {
-      console.log(event.event + " is clicked. i.e. edit");
+      this.tableOnEditSubject(event.row);
     }
     if (event.event === 'delete') {
-      console.log(event.event + " is clicked. i.e. delete");
+      this.tableOnDeleteSubject(event.row);
     }
     if (event.event === 'deactivate') {
-      console.log(event.event + " is clicked. i.e. deactivate");
+      this.tableOnDeactivateSubject(event.row);
     }
   }
+
+  tableOnEditSubject(row) {
+    this.subjectForm.patchValue({ 'subject': row.subject, 'active': row.active });
+  }
+
+  tableOnViewSubject(row) {
+    
+  }
+
+  tableOnDeleteSubject(row) {
+    
+  }
+
+  tableOnDeactivateSubject(row) {
+    
+  }
+  
 }
