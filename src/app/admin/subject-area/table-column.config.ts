@@ -1,10 +1,10 @@
-import { TableColumnConf } from '../../../app-utils/xDatatable/table/column.conf.datatable';
+import { TableColumnConf } from '../../app-utils/xDatatable/table/column.conf.datatable';
 
 export const ColumnConfig: Array<TableColumnConf> = [
     { key: '$index', mapto: '$index', name: 'SN.', sort: { enabled: false } },
     {
         key: 'subject',
-        name: 'Subject Area',
+        name: 'Subject',
         sort: { enabled: true },
         search: true
     },

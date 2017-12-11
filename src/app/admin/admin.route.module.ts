@@ -1,7 +1,6 @@
 import { NgModule, Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SubjectAreaComponent } from './subject-area/subject-area.component';
-import { SubjectAreaListComponent } from './subject-area/subject-area-list/subject-area-list.component';
 import { MultiChoiceComponent } from './multi-choice/multi-choice.component';
 import { AdminComponent } from './admin.component';
 

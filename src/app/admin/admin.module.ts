@@ -9,9 +9,6 @@ import { TooltipModule } from 'ngx-tooltip';
 import { CommonModule } from '@angular/common';
 import { AdminRoutingModule } from './admin.route.module';
 import { SubjectAreaComponent } from './subject-area/subject-area.component';
-import { SubjectAreaListComponent } from './subject-area/subject-area-list/subject-area-list.component';
-import { SubjectAreaNewComponent } from './subject-area/subject-area-new/subject-area-new.component';
-import { SubjectAreaEditComponent } from './subject-area/subject-area-edit/subject-area-edit.component';
 import { SubjectAreaService } from './subject-area/service/subject-area.service';
 import { MultiChoiceComponent } from './multi-choice/multi-choice.component';
 import { HomeModule } from '../home/home.module';
@@ -23,9 +20,6 @@ import { DynamicFormModule } from '../app-utils/xForm/dynamic-form.module';
     TableComponent,
     HtmlBind,
     SubjectAreaComponent,
-    SubjectAreaListComponent,
-    SubjectAreaNewComponent,
-    SubjectAreaEditComponent,
     MultiChoiceComponent,
     AdminComponent
   ],

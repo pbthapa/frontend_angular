@@ -1,2 +1,23 @@
-<app-subject-area-new (createNewSubject)="create($event)"></app-subject-area-new>
-<app-subject-area-list [subjects]="subjectAreaList"></app-subject-area-list>
+<div class="ui raised segment">
+    <h2 class="ui header">Subject Area</h2> 
+    <form [formGroup]="subjectForm"
+            (ngSubmit)="addSubject(subjectForm.value)"
+            class="ui large form segment">
+    <div class="field required">
+      <label for="subject">Subject</label>
+      <input type="text" id="subject" placeholder="subject" 
+        formControlName="subject">
+      <span class="field error" *ngIf="!subjectForm.controls['subject'].valid
+        && subjectForm.controls['subject'].touched">Subject is required</span>
+    </div>
+    <div class="field required">
+      <label for="active">Active</label>
+      <input type="checkbox" id="active" formControlName="active">
+    </div>
+    <button type="submit" class="ui positive right floated button" 
+      [disabled]="!subjectForm.valid">Submit</button> 
+    </form>
+
+    <xtable [options]="tableOptions" (event)="onCompleteApplicationClick($event)" 
+    [refresh]="refreshTable"></xtable>
+</div>
